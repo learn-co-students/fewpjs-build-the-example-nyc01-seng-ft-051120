@@ -1,8 +1,13 @@
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
-const divHidden = document.getElementById('modal')
-divHidden.className = 'hidden'
+
+function hideErrorDiv() {
+  const divHidden = document.getElementById('modal')
+  divHidden.className = 'hidden'
+}
+
+hideErrorDiv()
 
 // Your JavaScript code goes here!
 
@@ -11,15 +16,6 @@ document.addEventListener('DOMContentLoaded', function(){
 //Deliverable 1 using .catch
 // * Add the `.hidden` class to the error modal in the HTML so it
 //   does not appear when the page first loads
-const divHidden = document.getElementById('modal')
-divHidden.className = 'hidden'
-
-function hideErrorDiv() {
-  const divHidden = document.getElementById('modal')
-  divHidden.className = 'hidden'
-}
-
-
 
 const docBody = document.querySelector('body')
   docBody.addEventListener('click', function(e){
