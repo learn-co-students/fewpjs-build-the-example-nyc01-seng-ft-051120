@@ -4,7 +4,34 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+document.addEventListener("DOMContentLoaded", e =>{
+  const modal =  document.querySelector("#modal")
 
+  document.addEventListener("click",e=>{
+    if (e.target.className === "like-glyph"){
+      mimicServerCall()
+      .then(resp => {
+        console.log(e.target)
+        toggleClass(e.target,"activated-heart")
+      })
+      .catch(err =>{
+        displayErrorMessage(modal,err)
+      })
+    }
+  })
+  
+})
+
+function toggleClass(object,className){
+  object.classList.toggle(className)
+}
+
+function displayErrorMessage(object,message){
+  object.querySelector("p").textContent = message
+  toggleClass(modal,"hidden")
+  setTimeout(toggleClass(modal,"hidden"),5000)
+
+}
 
 
 //------------------------------------------------------------------------------
